@@ -97,12 +97,12 @@ body {
 }
 
 .love input:checked~p::after {
-  content: 'You';
+  content: 'You Irma';
   letter-spacing: 3px;
   color: #FFFFFF;
   z-index: 1;
   top: 82px;
-  left: 70px;
+  left: 30px;
 }
 
 @keyframes effects {
@@ -117,7 +117,7 @@ body {
   }
 
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-5px);
   }
 
   100% {
