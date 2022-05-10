@@ -1,0 +1,131 @@
+body {
+  background-color: #0c091d;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  overflow: hidden;
+  margin: 0;
+}
+
+.text {
+  position: absolute;
+  color: #faf4eb;
+  top: 50px;
+  text-align: center;
+}
+
+.text p {
+  font-size: 36px;
+  margin: 10px;
+  animation: animateWord 0.9s infinite;
+  
+}
+
+.text p.mother {
+  font-size: 42px;
+  font-weight: bolder;
+  animation-delay: .5s;
+  color: #ffee8c;
+}
+
+.love {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.love p::after {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  content: 'I Love';
+  color: #000000;
+  font-size: 32px;
+  font-weight: bolder;
+  top: 82px;
+  left: 50px;
+  transition: all .5s ease-in-out;
+
+}
+
+.love span {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #66f1a3;
+  transition: all .5s ease-in-out;
+  border-radius: 20%;
+}
+
+
+.love input {
+  position: absolute;
+  width: 230px;
+  height: 230px;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.love input:checked~span:nth-child(2) {
+  background-color: #d40000;
+  border-radius: 50%;
+  left: -55px;
+  z-index: 1;
+  animation: effects .5s linear alternate;
+}
+
+.love input:checked~span:nth-child(3) {
+  background-color: #d40000;
+  border-radius: 50%;
+  left: 75px;
+  z-index: 1;
+  animation: effects .5s linear alternate;
+}
+
+.love input:checked~span:nth-child(4) {
+  background-color: #d40000;
+  top: 65px;
+  left: 10px;
+  transform: rotate(45deg);
+  animation: effects .5s linear;
+
+  border-radius: unset;
+}
+
+.love input:checked~p::after {
+  content: 'You';
+  letter-spacing: 3px;
+  color: #FFFFFF;
+  z-index: 1;
+  top: 82px;
+  left: 70px;
+}
+
+@keyframes effects {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animateWord {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+#canvas {
+  position: absolute;
+}
